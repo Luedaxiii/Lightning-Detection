@@ -46,16 +46,60 @@ To set up the project locally:
 
 ## Usage
 
-1. **Prepare the Dataset**:
-   - Place your `.nc` dataset files in the `data/` folder.
+### 1. Prepare the Dataset
+- Place your `.nc` dataset files in the `data/` folder.
+- Ensure the data files are named appropriately to be referenced by the analysis scripts.
 
-2. **Run the Analysis**:
-   ```bash
-   python run_analysis.py
-   ```
+### 2. Running the Analysis
+- To begin the analysis of the lightning dataset, use the following command:
+  ```bash
+  python run_analysis.py
+  ```
+  This script will read the dataset, process it, and generate the required outputs.
 
-3. **Visualization**:
-   - Access the results in the `results/` directory as images and plots.
+- During the analysis, the script performs data pre-processing, feature extraction, and lightning event detection using the pre-trained machine learning model.
+
+### 3. Configuring Parameters
+- You can modify parameters for the analysis by editing the `config.json` file located in the root directory.
+  - **Model Parameters**: Adjust parameters such as batch size, epochs, or learning rate.
+  - **Data Parameters**: Configure paths for input datasets or output directories.
+
+  Example configuration change:
+  ```json
+  {
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "epochs": 50,
+    "data_path": "data/",
+    "output_path": "results/"
+  }
+  ```
+
+### 4. Viewing Results
+- Once the analysis completes, the results are saved in the `results/` directory.
+  - **Plots and Graphs**: The directory will contain plots showing the detected lightning strikes and relevant statistics.
+  - **CSV Output**: A CSV file is generated with details of detected lightning events, including timestamps and locations.
+
+- Use visualization tools to explore the data interactively:
+  ```bash
+  python visualize_results.py
+  ```
+  This command will open an interactive interface for exploring the generated plots and datasets.
+
+### 5. Training a New Model (Optional)
+- If you wish to train a new machine learning model, run:
+  ```bash
+  python train_model.py
+  ```
+  - Ensure that you have configured the training dataset paths and parameters in `config.json`.
+  - The training script will create a new model based on the dataset and save it in the `models/` directory.
+
+### 6. Running Unit Tests
+- To verify that the installation and all components are functioning as expected, run the unit tests:
+  ```bash
+  python -m unittest discover tests
+  ```
+  This will run all the tests in the `tests/` directory to ensure the code behaves as intended.
 
 ## Technologies Used
 
