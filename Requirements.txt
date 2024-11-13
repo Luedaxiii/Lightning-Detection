@@ -1,0 +1,7 @@
+numpy==1.23.5
+pandas==1.5.3
+tensorflow==2.10.0
+matplotlib==3.6.2
+netCDF4==1.6.1
+pyltg==0.1.5
+cuda==11.7
