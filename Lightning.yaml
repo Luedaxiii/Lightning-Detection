@@ -1,0 +1,10 @@
+# Path configuration for YOLO dataset
+
+train: C:\Users\jbull\OneDrive - Fayetteville State University\CSC490 SENIOR PROJECT\dataset2\images\train
+val: C:\Users\jbull\OneDrive - Fayetteville State University\CSC490 SENIOR PROJECT\dataset2\images\val
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['lightning']
